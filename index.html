@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanjay Selvaraj — Site Reliability Engineer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <nav>
+    <div class="logo">Sanjay Selvaraj</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-content">
+    <h1>Sanjay Selvaraj</h1>
+    <h2>Site Reliability Engineer (SRE)</h2>
+    <p class="tagline">Incident management &middot; Kubernetes &middot; AWS &middot; Observability &middot; Python automation</p>
+    <div class="hero-meta">
+      <span>📍 Chennai · Open to remote / relocation</span>
+    </div>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary">Get in touch</a>
+      <a href="mailto:sanjayragavan27@gmail.com" class="btn btn-secondary">Email me</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section id="about" class="section">
+    <h2 class="section-title">About</h2>
+    <p class="about-text">
+      Site Reliability Engineer with hands-on experience in incident management, production reliability,
+      Kubernetes troubleshooting, AWS cloud operations, observability, and Python automation. Managed
+      250+ operational incidents with a typical MTTR under 3 hours, led high-severity war room coordination
+      with VP-level stakeholders, built internal automation tooling to reduce operational toil, and
+      proactively drove reliability improvements through data-driven infrastructure changes. Experienced in
+      on-call operations and cross-functional stakeholder coordination across distributed production environments.
+    </p>
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-number">250+</span>
+        <span class="stat-label">Incidents managed</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">&lt;3h</span>
+        <span class="stat-label">Typical MTTR</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">7+</span>
+        <span class="stat-label">Production environments</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">30-40+</span>
+        <span class="stat-label">War room participants coordinated</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section section-alt">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Cloud Platforms</h3>
+        <p>AWS (EKS, EC2, IAM, CloudWatch, S3, RDS, Secrets Manager, Cross-Account Role Assumption)</p>
+      </div>
+      <div class="skill-card">
+        <h3>Containers &amp; Orchestration</h3>
+        <p>Kubernetes, Docker, Argo CD, Kubernetes CronJobs, Helm (basic), Service Accounts, Kubernetes Secrets, HPA</p>
+      </div>
+      <div class="skill-card">
+        <h3>Monitoring &amp; Observability</h3>
+        <p>Splunk (Log Analysis), Dynatrace (APM &amp; Metrics), BPM Synthetic Monitoring, Observability</p>
+      </div>
+      <div class="skill-card">
+        <h3>Incident &amp; Reliability Engineering</h3>
+        <p>Incident Management, Problem Management, RCA, MTTR Optimization, On-call Operations, Toil Reduction, War Room Coordination</p>
+      </div>
+      <div class="skill-card">
+        <h3>CI/CD &amp; Developer Tools</h3>
+        <p>Jenkins, Git, Bitbucket, Jira, Linux, pytest, pre-commit hooks, uv, linting, environment configuration</p>
+      </div>
+      <div class="skill-card">
+        <h3>Programming &amp; Engineering</h3>
+        <p>Python, SQL, Java (code comprehension), JavaScript (basic), Microservices Troubleshooting, Distributed Systems, Networking, OOP, DBMS, OS</p>
+      </div>
+    </div>
+    <p class="expanding-note">Currently expanding expertise in: Bash scripting, Advanced AWS cloud operations</p>
+  </section>
+
+  <section id="experience" class="section">
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <h3>Associate Software Engineer (SRE)</h3>
+          <span class="timeline-date">Jan 2025 – Present</span>
+        </div>
+        <p class="timeline-company">ADP · Chennai · Converted from Intern to Associate Software Engineer</p>
+
+        <h4>Incident Operations Management</h4>
+        <ul>
+          <li>Coordinated high-severity war room investigations involving 30–40+ participants across engineering, director, and VP-level stakeholders.</li>
+          <li>Maintained platform stability across 7+ production environments through proactive incident response and escalation management.</li>
+          <li>Managed 250+ operational incidents maintaining a typical MTTR under 3 hours through structured alert ownership and rapid escalation.</li>
+          <li>Sustained uninterrupted production coverage during alternate-week on-call rotations, including weekends.</li>
+          <li>Accelerated root cause identification using Splunk, Dynatrace, BPM synthetic monitoring, Kubernetes diagnostics, and AWS EKS troubleshooting.</li>
+        </ul>
+
+        <h4>Problem Management &amp; Root Cause Analysis</h4>
+        <ul>
+          <li>Analyzed 3 months of alert data to identify recurring OOM patterns — designed and merged HPA configurations to proactively address memory-related pod restarts.</li>
+          <li>Identified root causes for 10+ recurring incident patterns and collaborated with engineering teams on permanent fixes.</li>
+          <li>Investigated JVM memory issues, thread dumps, pod restarts, readiness failures, timeouts, and downstream dependency failures.</li>
+          <li>Eliminated repeat pod restart incidents by identifying insufficient memory allocation in scheduled workloads.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section section-alt">
+    <h2 class="section-title">Automation &amp; Internal Tooling</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Incident Management Bot</h3>
+        <p>Reduced manual incident coordination effort by ~10–15 minutes per incident by enhancing an internal automation platform integrating Jira, Webex, and Opsgenie workflow automation.</p>
+      </div>
+      <div class="project-card">
+        <h3>AWS Health Event Notifier</h3>
+        <p>Built and production-deployed a Python tool that proactively alerts SRE, DevOps, and infrastructure stakeholders about AWS maintenance events via cross-account IAM role assumption. Deployed using Jenkins CI, Argo CD, Kubernetes CronJobs, Kubernetes Secrets, and pytest.</p>
+      </div>
+      <div class="project-card">
+        <h3>RCA Investigation Assistant</h3>
+        <p>Reduced manual RCA investigation effort by automating log, metric, and incident-context correlation into a single summarized output for faster engineering triage.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements" class="section">
+    <h2 class="section-title">Achievements &amp; Education</h2>
+    <div class="achievements-grid">
+      <div class="achievement-card">
+        <h3>Intern → Associate Software Engineer</h3>
+        <p>Converted from Intern to Associate Software Engineer at ADP based on demonstrated production impact.</p>
+      </div>
+      <div class="achievement-card">
+        <h3>IEEE Publication</h3>
+        <p>Published research paper: <em>Deep Learning with Multi-Modal Imaging: An Advanced Approach to Brain Tumor Detection</em>, IEEE, 2024.</p>
+      </div>
+      <div class="achievement-card">
+        <h3>Education</h3>
+        <p>B.E. Computer Science and Engineering<br>KPR Institute of Engineering and Technology, Coimbatore (2021–2025)<br>CGPA: 7.78/10</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section section-alt">
+    <h2 class="section-title">Get in Touch</h2>
+    <div class="contact-content">
+      <p>Open to remote and relocation opportunities — let's connect.</p>
+      <div class="contact-links">
+        <a href="mailto:sanjayragavan27@gmail.com">✉ sanjayragavan27@gmail.com</a>
+        <a href="tel:+917708499283">📞 +91 77084 99283</a>
+        <span>📍 Chennai, India</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Sanjay Selvaraj. Built with care.</p>
+</footer>
+
+</body>
+</html>
