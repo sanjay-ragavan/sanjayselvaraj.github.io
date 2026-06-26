@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Kubernetes Learning Path — Sanjay Selvaraj</title>
+<meta name="description" content="A running log of what I've learned in Kubernetes so far, and the roadmap I'm using to get to production-grade, SRE-level depth.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b1120'/%3E%3Ctext x='50' y='68' font-size='52' font-family='Arial,sans-serif' font-weight='800' fill='%2344e0c4' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="blog.css">
+</head>
+<body>
+
+<div class="bg-mesh" aria-hidden="true">
+  <span class="blob blob-1"></span>
+  <span class="blob blob-2"></span>
+  <span class="blob blob-3"></span>
+  <span class="grid-overlay"></span>
+</div>
+
+<header>
+  <nav>
+    <a href="../" class="logo">SS<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="../" class="nav-link">Home</a></li>
+      <li><a href="./" class="nav-link active">Blog</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme" title="Toggle light/dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <article class="post-article">
+    <a href="./" class="back-to-blog">&larr; Back to blog</a>
+
+    <time class="post-date" datetime="2026-06-26">June 26, 2026</time>
+    <h1>My Kubernetes Learning Path</h1>
+    <p class="post-subtitle">A running log of what I've learned so far, and the roadmap I'm using to get to production-grade, SRE-level depth.</p>
+
+    <div class="post-body">
+      <p>
+        I've been building up Kubernetes depth hands-on rather than just reading about it — running a real
+        multi-node cluster locally, breaking things, and working through the stack layer by layer. This post
+        is partly a log for myself and partly a map for anyone else on the same path. I'll keep updating it as
+        I go.
+      </p>
+
+      <h2>What I've learned so far</h2>
+
+      <h3>1. Kubernetes fundamentals</h3>
+      <ul>
+        <li>What Kubernetes is</li>
+        <li>Cluster architecture</li>
+        <li>Control plane vs. worker nodes</li>
+        <li>Pods</li>
+        <li>Deployments</li>
+        <li>ReplicaSets</li>
+        <li>Services (basic understanding)</li>
+        <li>Namespaces</li>
+      </ul>
+
+      <h3>2. Kind (Kubernetes in Docker)</h3>
+      <ul>
+        <li>Installed Docker</li>
+        <li>Installed Kind</li>
+        <li>Created a multi-node Kind cluster (<code>sre-lab</code>)</li>
+        <li>Viewed cluster information</li>
+        <li>Switched contexts</li>
+        <li>Deleted and recreated clusters</li>
+      </ul>
+
+      <h3>3. kubectl</h3>
+      <ul>
+        <li><code>kubectl get</code></li>
+        <li><code>kubectl describe</code></li>
+        <li><code>kubectl logs</code></li>
+        <li><code>kubectl exec</code></li>
+        <li><code>kubectl apply</code></li>
+        <li><code>kubectl delete</code></li>
+        <li><code>kubectl scale</code></li>
+        <li><code>kubectl top</code></li>
+        <li>Viewing namespaces, nodes, and pods</li>
+      </ul>
+
+      <h3>4. YAML manifests</h3>
+      <ul>
+        <li>Pod manifest</li>
+        <li>Deployment manifest</li>
+        <li>Service manifest</li>
+        <li>Namespace manifest</li>
+      </ul>
+
+      <h3>5. Deployments</h3>
+      <ul>
+        <li>Creating Deployments</li>
+        <li>Scaling replicas</li>
+        <li>Updating images</li>
+        <li>Rolling updates</li>
+        <li>Rollbacks (basic)</li>
+      </ul>
+
+      <h3>6. Namespaces</h3>
+      <ul>
+        <li>Creating namespaces</li>
+        <li>Deploying applications into different namespaces</li>
+        <li>Listing namespace resources</li>
+      </ul>
+
+      <h3>7. ConfigMaps</h3>
+      <ul>
+        <li>Creating ConfigMaps</li>
+        <li>Using ConfigMaps in Pods</li>
+        <li>Environment variables from ConfigMaps</li>
+      </ul>
+
+      <h3>8. Secrets</h3>
+      <ul>
+        <li>Creating Opaque Secrets</li>
+        <li>Mounting Secrets</li>
+        <li>Environment variables using Secrets</li>
+      </ul>
+
+      <h3>9. Storage</h3>
+      <ul>
+        <li>Persistent Volumes (PV)</li>
+        <li>Persistent Volume Claims (PVC)</li>
+        <li>Local Path StorageClass (Kind)</li>
+      </ul>
+
+      <h3>10. Resource monitoring</h3>
+      <ul>
+        <li>Installed Metrics Server</li>
+        <li>Used <code>kubectl top pod</code> and <code>kubectl top node</code></li>
+      </ul>
+
+      <h3>11. Helm</h3>
+      <ul>
+        <li>Installed Helm</li>
+        <li>Added Helm repositories</li>
+        <li>Installed applications using Helm</li>
+        <li>Upgraded Helm releases</li>
+        <li>Uninstalled Helm releases</li>
+      </ul>
+
+      <h3>12. Monitoring stack</h3>
+      <ul>
+        <li>Installed <code>kube-prometheus-stack</code>, which includes Prometheus, Grafana, Alertmanager, Node Exporter, and kube-state-metrics</li>
+      </ul>
+
+      <h3>13. Prometheus</h3>
+      <ul>
+        <li>Installation</li>
+        <li>Targets</li>
+        <li>Metrics collection</li>
+        <li>Basic queries</li>
+      </ul>
+
+      <h3>14. Grafana</h3>
+      <ul>
+        <li>Login</li>
+        <li>Dashboards</li>
+        <li>Prometheus datasource</li>
+        <li>Viewing cluster metrics</li>
+      </ul>
+
+      <h3>15. Stress testing</h3>
+      <ul>
+        <li>Created a CPU stress pod</li>
+        <li>Observed CPU utilization</li>
+        <li>Viewed metrics in Grafana and Prometheus</li>
+      </ul>
+
+      <h2>The roadmap: beginner &rarr; advanced</h2>
+      <p>Here's the fuller map I'm working against, with what's done so far checked off.</p>
+
+      <h3>Beginner</h3>
+      <ul>
+        <li><span class="check">&check;</span>What is Kubernetes?</li>
+        <li><span class="check">&check;</span>Cluster architecture</li>
+        <li><span class="check">&check;</span>Nodes</li>
+        <li><span class="check">&check;</span>Pods</li>
+        <li><span class="check">&check;</span>ReplicaSets</li>
+        <li><span class="check">&check;</span>Deployments</li>
+        <li><span class="check">&check;</span>Services</li>
+        <li><span class="check">&check;</span>Namespaces</li>
+        <li><span class="check">&check;</span>kubectl</li>
+        <li><span class="check">&check;</span>YAML</li>
+        <li><span class="check">&check;</span>ConfigMaps</li>
+        <li><span class="check">&check;</span>Secrets</li>
+      </ul>
+
+      <h3>Intermediate</h3>
+      <ul>
+        <li><span class="check">&check;</span>Persistent Volumes</li>
+        <li><span class="check">&check;</span>Persistent Volume Claims</li>
+        <li>StorageClasses</li>
+        <li>StatefulSets</li>
+        <li>DaemonSets</li>
+        <li>Jobs</li>
+        <li>CronJobs</li>
+        <li>Init Containers</li>
+        <li>Multi-container Pods</li>
+        <li>Liveness Probes</li>
+        <li>Readiness Probes</li>
+        <li>Startup Probes</li>
+        <li>Resource Requests &amp; Limits</li>
+        <li>Horizontal Pod Autoscaler (HPA)</li>
+        <li>Vertical Pod Autoscaler (VPA)</li>
+      </ul>
+
+      <h3>Networking</h3>
+      <ul>
+        <li>ClusterIP</li>
+        <li>NodePort</li>
+        <li>LoadBalancer</li>
+        <li>ExternalName</li>
+        <li>Headless Services</li>
+        <li>DNS / CoreDNS</li>
+        <li>Ingress</li>
+        <li>Ingress Controller</li>
+        <li>Network Policies</li>
+      </ul>
+
+      <h3>Security</h3>
+      <ul>
+        <li>RBAC</li>
+        <li>Service Accounts</li>
+        <li>Roles &amp; ClusterRoles</li>
+        <li>RoleBindings &amp; ClusterRoleBindings</li>
+        <li>Pod Security Standards</li>
+        <li>Security Contexts</li>
+        <li>Admission Controllers</li>
+      </ul>
+
+      <h3>Storage (advanced)</h3>
+      <ul>
+        <li>CSI Drivers</li>
+        <li>Dynamic Provisioning</li>
+        <li>Volume Snapshots</li>
+        <li>ReadWriteOnce / ReadOnlyMany / ReadWriteMany</li>
+      </ul>
+
+      <h3>Scheduling</h3>
+      <ul>
+        <li>Labels &amp; Selectors</li>
+        <li>Taints &amp; Tolerations</li>
+        <li>Node Affinity</li>
+        <li>Pod Affinity / Anti-Affinity</li>
+        <li>Priority Classes</li>
+      </ul>
+
+      <h3>Observability</h3>
+      <ul>
+        <li><span class="check">&check;</span>Prometheus</li>
+        <li><span class="check">&check;</span>Grafana</li>
+        <li><span class="check">&check;</span>Metrics Server</li>
+        <li>Alertmanager</li>
+        <li>Logging — Fluent Bit, Loki, Elasticsearch, Kibana</li>
+        <li>Distributed Tracing — OpenTelemetry</li>
+      </ul>
+
+      <h3>Package management</h3>
+      <ul>
+        <li><span class="check">&check;</span>Helm</li>
+        <li>Helm Charts &amp; values files</li>
+        <li>Chart development &amp; dependencies</li>
+      </ul>
+
+      <h3>Production Kubernetes</h3>
+      <ul>
+        <li>Rolling Updates &amp; Rollbacks (at production-hardening depth)</li>
+        <li>Pod Disruption Budgets</li>
+        <li>Resource Quotas &amp; LimitRanges</li>
+        <li>Backup &amp; Restore</li>
+        <li>etcd</li>
+        <li>High Availability</li>
+        <li>Cluster Upgrades</li>
+      </ul>
+
+      <h3>GitOps &amp; CI/CD</h3>
+      <ul>
+        <li><span class="check">&check;</span>Argo CD</li>
+        <li>GitOps concepts</li>
+        <li>Jenkins + Kubernetes</li>
+        <li>GitHub Actions + Kubernetes</li>
+        <li>Image automation</li>
+      </ul>
+
+      <h3>Cloud Kubernetes</h3>
+      <ul>
+        <li>Amazon EKS</li>
+        <li>Azure AKS</li>
+        <li>Google GKE</li>
+        <li>Load Balancers &amp; IAM Integration</li>
+        <li>Autoscaling &amp; Managed Node Groups</li>
+      </ul>
+
+      <h3>Advanced</h3>
+      <ul>
+        <li>Custom Resource Definitions (CRDs)</li>
+        <li>Operators</li>
+        <li>Admission Webhooks</li>
+        <li>API Aggregation</li>
+        <li>Service Mesh — Istio, Linkerd</li>
+        <li>Kustomize</li>
+        <li>Helm chart development</li>
+        <li>Multi-cluster Kubernetes</li>
+      </ul>
+
+      <h2>What's next</h2>
+      <p>
+        Since I'm targeting an SRE/DevOps role, I'm tackling the next stretch in this order — it tracks closely
+        with what actually shows up in production Kubernetes environments:
+      </p>
+      <ol>
+        <li>StatefulSets</li>
+        <li>Jobs &amp; CronJobs</li>
+        <li>Liveness, Readiness &amp; Startup Probes</li>
+        <li>Resource Requests &amp; Limits</li>
+        <li>RBAC</li>
+        <li>Ingress &amp; Ingress Controller</li>
+        <li>HPA &amp; Cluster Autoscaler</li>
+        <li>Taints, Tolerations &amp; Affinity</li>
+        <li>Network Policies</li>
+        <li>Kustomize</li>
+        <li>CRDs &amp; Operators</li>
+        <li>Service Mesh (Istio)</li>
+      </ol>
+
+      <p>I'll post updates here as I work through each of these.</p>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <p>&copy; <span id="year"></span> Sanjay Selvaraj. Built with care.</p>
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5m0 0l-6 6m6-6l6 6"/></svg>
+  </button>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

@@ -138,6 +138,20 @@
   margin-bottom: 0.5rem;
 }
 
+.post-body .check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1em;
+  height: 1.1em;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
 .post-body code {
   background: var(--surface-2);
   padding: 0.15rem 0.4rem;
